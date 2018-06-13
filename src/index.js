@@ -12,7 +12,24 @@ function longestString(array) {
 
 exports.longestString = longestString;
 
-function replaceInstances(string) {}
+function replaceInstances(string) {
+  const formula = {
+    i: 1,
+    l: 1,
+    z: 2,
+    e: 3,
+    a: 4,
+    s: 5,
+    g: 6,
+    t: 7,
+    b: 8,
+    q: 9,
+    o: 0
+  }
+  return [...string].map(function(item){
+    return typeof formula[item] === 'number' ? formula[item] : item;
+  }).join('');
+}
 
 exports.replaceInstances = replaceInstances;
 
@@ -38,9 +55,13 @@ Developer.prototype.learnLanguage = function(language) {
 exports.Developer = Developer;
 
 function Garden(plants) {
-  for (var prop in plants) {
+  for (let prop in plants) {
     if (plants.hasOwnProperty(prop)) {
       this[prop] = plants[prop];
+  // OR
+  // Object.keys(plants.forEach(key) => {
+  //    this[key] = plants[key]
+  //})
     }
   }
 }
@@ -49,6 +70,7 @@ Garden.prototype.plant = function(newPlants) {
   for (let key in newPlants) {
     this[key] = newPlants[key];
   }
+  // OR same code as above.
 };
 
 exports.Garden = Garden;

@@ -12,11 +12,11 @@ test('Longest String', function(){
   expect(result).toBe(expected);
 });
 
-// test('l337', function(){
-//   const expected = 'C0n57ruc70r';
-//   const result = functions.replaceInstances("Constructor");
-//   expect(result).toBe(expected);
-// });
+test.only('l337', function(){
+  const expected = 'C0n57ruc70r';
+  const result = functions.replaceInstances("Constructor");
+  expect(result).toBe(expected);
+});
 
 test('Unique String', function(){
   const expected = ['a','1','4','2'];
@@ -78,7 +78,7 @@ test('camelise', function(){
   expect(result).toEqual(expected);
 })
 
-test.only('merging', function(){
+test('merging', function(){
   const expected = {a: 6, b: 12, c: 19} ;
   const result = functions.merging([{a: 6}, {a: 7, b: 12}, {a: 2, b: 5, c: 19}]);
   expect(result).toEqual(expected);
